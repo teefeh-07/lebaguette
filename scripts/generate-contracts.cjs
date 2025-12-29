@@ -8,7 +8,7 @@ const path = require('path');
 function run(cmd) {
     try {
         console.log(`> ${cmd}`);
-        execSync(cmd, { stdio: 'inherit' });
+        execSync(cmd, { stdio: 'inherit', cwd: path.join(__dirname, '..') });
     } catch (e) {
         console.error(`Failed: ${cmd}`);
     }
@@ -47,7 +47,7 @@ for (const feature of features) {
     const contractPath = path.join(__dirname, '../contracts', `${feature}.clar`);
     fs.writeFileSync(contractPath, contractContent);
 
-    run(`git add ${contractPath}`);
+    run(`git add contracts/${feature}.clar`);
     run(`git commit -m "feat: scaffold ${feature} contract"`);
     run(`git push -u origin ${branchName}`);
 
