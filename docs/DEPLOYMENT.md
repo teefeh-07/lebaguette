@@ -1,5 +1,7 @@
-# Deployment Guide
+# DEPLOYMENT
 
-## Prerequisites
-- Clarinet installed
-- Node.js 18+
+Documentation for DEPLOYMENT
+
+## Overview
+
+TODO: Add content
