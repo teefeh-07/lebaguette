@@ -242,10 +242,5 @@
     )
 )
 
-(define-public (withdraw-funds)
-    (begin
-        (asserts! (is-eq tx-sender contract-owner) err-not-owner)
-        (as-contract (stx-transfer? (stx-get-balance (as-contract tx-sender)) (as-contract tx-sender) contract-owner))
-    )
-)
+
 
